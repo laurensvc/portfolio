@@ -69,7 +69,7 @@ export const Skills: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold">
             Mijn
-            <span style={{ color: 'var(--accent)' }}> gereedschapskist</span>
+            <span style={{ color: 'var(--accent)' }}> skills</span>
           </h2>
         </motion.div>
 
@@ -136,10 +136,11 @@ export const Skills: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-2xl md:text-3xl font-display font-medium max-w-3xl mx-auto leading-relaxed">
-            &ldquo;Ik geloof in het kiezen van het
-            <span style={{ color: 'var(--accent)' }}> juiste gereedschap </span>
-            voor de klus—niet alleen het trendy.&rdquo;
+          <p className="text-2xl md:text-3xl font-display font-medium max-w-4xl mx-auto leading-relaxed">
+            &ldquo;Transparantie en eerlijkheid staan centraal in mijn werk. <br />
+            <span style={{ color: 'var(--accent)' }}>Heldere communicatie </span> 
+            betekent dat ik altijd onderbouwde meningen geef — ook als die buiten de verwachting liggen. <br />
+            Zo komen we tot de beste oplossing voor elke uitdaging.&rdquo;
           </p>
         </motion.div>
       </div>

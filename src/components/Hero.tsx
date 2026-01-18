@@ -103,7 +103,7 @@ export const Hero: React.FC = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
               >
-                YOUR
+                Laurens
               </motion.h1>
             </div>
             <div className="overflow-hidden mb-8">
@@ -113,13 +113,7 @@ export const Hero: React.FC = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
               >
-                NAME
-                <span 
-                  className="text-[4vw] md:text-[3vw] font-mono font-normal"
-                  style={{ color: 'var(--accent)' }}
-                >
-                  .dev
-                </span>
+                from <div style={{ color: 'var(--accent)' }}>VCWORKS</div>
               </motion.h1>
             </div>
 

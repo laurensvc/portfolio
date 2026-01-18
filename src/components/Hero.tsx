@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const roles = ["Developer", "Designer", "Creator", "Engineer"];
+const roles = ["Ontwikkelaar", "Ontwerper", "Maker", "Ingenieur"];
 
 export const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
 
   useEffect(() => {
     const updateTime = () => {
-      setTime(new Date().toLocaleTimeString("en-US", { 
+      setTime(new Date().toLocaleTimeString("nl-NL", { 
         hour: "2-digit", 
         minute: "2-digit",
         hour12: false 
@@ -73,7 +73,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <span>PORTFOLIO © 2024</span>
-          <span className="hidden md:block">AVAILABLE FOR WORK</span>
+          <span className="hidden md:block">BESCHIKBAAR VOOR WERK</span>
           <span>{time}</span>
         </motion.div>
 
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <span className="inline-block w-12 h-px bg-muted mr-4 align-middle" />
-              Hello, I&apos;m
+              Hallo, ik ben
             </motion.p>
 
             {/* Name - Large display */}
@@ -130,7 +130,7 @@ export const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <span className="font-mono text-muted text-sm">I am a</span>
+              <span className="font-mono text-muted text-sm">Ik ben een</span>
               <div className="relative h-10 overflow-hidden">
                 <motion.div
                   key={currentRole}
@@ -153,11 +153,11 @@ export const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              Crafting digital experiences that merge 
-              <span className="text-ink font-medium"> bold aesthetics </span> 
-              with 
-              <span className="text-ink font-medium"> flawless functionality</span>. 
-              Based in Your City.
+              Ik creëer digitale ervaringen die 
+              <span className="text-ink font-medium"> gedurfde esthetiek </span> 
+              combineren met 
+              <span className="text-ink font-medium"> vlekkeloze functionaliteit</span>. 
+              Gevestigd in Jouw Stad.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -178,7 +178,7 @@ export const Hero: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative z-10">View Work</span>
+                <span className="relative z-10">Bekijk Werk</span>
                 <motion.div
                   className="absolute inset-0"
                   style={{ backgroundColor: 'var(--accent)' }}
@@ -201,7 +201,7 @@ export const Hero: React.FC = () => {
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Let&apos;s Talk
+                Laten we praten
               </motion.a>
             </motion.div>
           </motion.div>
@@ -225,7 +225,7 @@ export const Hero: React.FC = () => {
             transition={{ duration: 1.5, repeat: Infinity }}
             onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
           >
-            <span>SCROLL</span>
+            <span>SCROLLEN</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="rotate-90">
               <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5"/>
             </svg>

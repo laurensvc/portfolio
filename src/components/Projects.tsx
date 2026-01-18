@@ -20,9 +20,9 @@ const projects: Project[] = [
   {
     id: "01",
     title: "Fintech Dashboard",
-    category: "Web Application",
+    category: "Web Applicatie",
     year: "2024",
-    description: "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights for institutional investors.",
+    description: "Een uitgebreid financieel analytics platform met real-time data visualisatie, portefeuillebeheer en AI-gestuurde inzichten voor institutionele beleggers.",
     technologies: ["Next.js", "TypeScript", "D3.js", "PostgreSQL"],
     image: "/projects/project1.jpg",
     color: "#ff4d00",
@@ -34,7 +34,7 @@ const projects: Project[] = [
     title: "E-Commerce Platform",
     category: "Full Stack",
     year: "2023",
-    description: "Headless commerce solution with custom CMS, payment integration, and inventory management serving 100K+ monthly users.",
+    description: "Headless commerce oplossing met aangepast CMS, betalingsintegratie en voorraadbeheer voor meer dan 100K maandelijkse gebruikers.",
     technologies: ["React", "Node.js", "Stripe", "MongoDB"],
     image: "/projects/project2.jpg",
     color: "#00d4aa",
@@ -44,9 +44,9 @@ const projects: Project[] = [
   {
     id: "03",
     title: "Design System",
-    category: "Component Library",
+    category: "Component Bibliotheek",
     year: "2023",
-    description: "Enterprise-grade design system with 50+ components, comprehensive documentation, and Figma integration used across multiple product teams.",
+    description: "Enterprise-grade design system met 50+ componenten, uitgebreide documentatie en Figma integratie gebruikt door meerdere productteams.",
     technologies: ["React", "Storybook", "TypeScript", "Radix UI"],
     image: "/projects/project3.jpg",
     color: "#0a0a0a",
@@ -58,7 +58,7 @@ const projects: Project[] = [
     title: "AI Content Studio",
     category: "SaaS Product",
     year: "2024",
-    description: "AI-powered content generation and management platform with collaborative editing, version control, and publishing workflows.",
+    description: "AI-gestuurd content generatie- en beheerplatform met collaboratieve editing, versiebeheer en publicatieworkflows.",
     technologies: ["Next.js", "OpenAI", "Prisma", "Redis"],
     image: "/projects/project4.jpg",
     color: "#ff4d00",
@@ -83,11 +83,11 @@ export const Projects: React.FC = () => {
           <div className="flex items-center gap-4 mb-6">
             <span className="font-mono text-sm text-paper/50 tracking-widest">04</span>
             <div className="w-12 h-px bg-paper/30" />
-            <span className="font-mono text-sm text-paper/50 tracking-widest uppercase">Work</span>
+            <span className="font-mono text-sm text-paper/50 tracking-widest uppercase">Werk</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-paper">
-            Selected
-            <span style={{ color: 'var(--accent)' }}> projects</span>
+            Geselecteerde
+            <span style={{ color: 'var(--accent)' }}> projecten</span>
           </h2>
         </motion.div>
 
@@ -187,12 +187,12 @@ export const Projects: React.FC = () => {
                     <div className="col-span-12 lg:col-span-4 flex gap-4 mt-4 lg:mt-0 lg:justify-end">
                       {project.liveUrl && (
                         <span className="font-mono text-xs text-paper/50 uppercase tracking-wider hover:text-accent transition-colors">
-                          View Live →
+                          Bekijk Live →
                         </span>
                       )}
                       {project.githubUrl && (
                         <span className="font-mono text-xs text-paper/50 uppercase tracking-wider hover:text-accent transition-colors">
-                          Source →
+                          Broncode →
                         </span>
                       )}
                     </div>
@@ -216,7 +216,7 @@ export const Projects: React.FC = () => {
             className="inline-flex items-center gap-3 font-mono text-sm text-paper/50 uppercase tracking-wider hover:text-accent transition-colors"
             whileHover={{ x: 10 }}
           >
-            View all projects
+            Bekijk alle projecten
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5"/>
             </svg>

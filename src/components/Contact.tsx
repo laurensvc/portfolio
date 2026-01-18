@@ -20,7 +20,7 @@ export const Contact: React.FC = () => {
         viewport={{ once: true }}
         transition={{ duration: 1.5, ease: [0.33, 1, 0.68, 1] }}
       >
-        LET&apos;S TALK
+        Laten we praten
       </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -48,14 +48,14 @@ export const Contact: React.FC = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-8">
-              Have a project in mind?
-              <span style={{ color: 'var(--accent)' }}> Let&apos;s create something great together.</span>
+              Heb je een project in gedachten?
+              <span style={{ color: 'var(--accent)' }}> Laten we samen iets geweldigs creëren.</span>
             </h2>
 
             <p className="text-lg text-muted leading-relaxed mb-12">
-              I&apos;m currently available for freelance work and full-time opportunities. 
-              If you have a project that needs a combination of design thinking and 
-              technical expertise, I&apos;d love to hear about it.
+              Ik ben momenteel beschikbaar voor freelance werk en full-time mogelijkheden. 
+              Als je een project hebt dat een combinatie van design thinking en 
+              technische expertise nodig heeft, hoor ik graag van je.
             </p>
 
             <motion.a
@@ -95,7 +95,7 @@ export const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="font-mono text-xs uppercase tracking-widest text-muted mb-8">
-              Find me on
+              Vind me op
             </h3>
 
             <div className="space-y-0">
@@ -155,12 +155,12 @@ export const Contact: React.FC = () => {
                   style={{ backgroundColor: 'var(--highlight)' }}
                 />
                 <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                  Currently available
+                  Momenteel beschikbaar
                 </span>
               </div>
               <p className="text-sm text-muted">
-                Open to full-time positions and exciting freelance projects. 
-                Response time is typically within 24 hours.
+                Open voor full-time posities en spannende freelance projecten. 
+                Reactietijd is meestal binnen 24 uur.
               </p>
             </motion.div>
           </motion.div>
@@ -176,10 +176,10 @@ export const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="font-mono text-sm text-muted">
-            © 2024 Your Name. All rights reserved.
+            © 2024 Jouw Naam. Alle rechten voorbehouden.
           </div>
           <div className="font-mono text-sm text-muted">
-            Designed & Built with precision
+            Ontworpen & Gebouwd met precisie
           </div>
         </motion.div>
       </div>

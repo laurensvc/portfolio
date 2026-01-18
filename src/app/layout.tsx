@@ -7,13 +7,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Your Name — Developer & Designer",
-  description: "Full-stack developer and designer crafting exceptional digital experiences. Available for freelance and full-time opportunities.",
+  title: "Jouw Naam — Ontwikkelaar & Ontwerper",
+  description: "Full-stack ontwikkelaar en ontwerper die uitzonderlijke digitale ervaringen creëert. Beschikbaar voor freelance en full-time mogelijkheden.",
   keywords: ["portfolio", "developer", "designer", "full stack", "web development", "software engineer", "UI/UX"],
   authors: [{ name: "Your Name" }],
   openGraph: {
-    title: "Your Name — Developer & Designer",
-    description: "Full-stack developer and designer crafting exceptional digital experiences",
+    title: "Jouw Naam — Ontwikkelaar & Ontwerper",
+    description: "Full-stack ontwikkelaar en ontwerper die uitzonderlijke digitale ervaringen creëert",
     type: "website",
   },
 };
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="antialiased">
+    <html lang="nl" className="antialiased">
       <body className="font-display">
         {children}
       </body>

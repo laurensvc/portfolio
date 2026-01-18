@@ -19,8 +19,8 @@ const experiences: Experience[] = [
     id: "01",
     company: "Company One",
     role: "Senior Software Engineer",
-    period: "2022 — Present",
-    type: "Full-time",
+    period: "2022 — Heden",
+    type: "Volledige baan",
     description: "Leading frontend architecture and design systems for a fintech platform serving millions of users.",
     achievements: [
       "Architected a component library used across 5 product teams",
@@ -34,12 +34,12 @@ const experiences: Experience[] = [
     company: "Company Two",
     role: "Full Stack Developer",
     period: "2020 — 2022",
-    type: "Full-time",
-    description: "Built scalable web applications and APIs for an enterprise SaaS product.",
+    type: "Volledige baan",
+    description: "Schaalbare web applicaties en API's gebouwd voor een enterprise SaaS product.",
     achievements: [
-      "Developed real-time collaboration features using WebSockets",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
-      "Led migration from monolith to microservices architecture"
+      "Real-time samenwerkingsfuncties ontwikkeld met WebSockets",
+      "CI/CD pipelines geïmplementeerd die deployment tijd met 60% verminderden",
+      "Migratie geleid van monolith naar microservices architectuur"
     ],
     technologies: ["Vue.js", "Node.js", "PostgreSQL", "Docker", "Redis"]
   },
@@ -48,12 +48,12 @@ const experiences: Experience[] = [
     company: "Agency Name",
     role: "Frontend Developer",
     period: "2018 — 2020",
-    type: "Full-time",
-    description: "Crafted bespoke digital experiences for high-profile brands and startups.",
+    type: "Volledige baan",
+    description: "Op maat gemaakte digitale ervaringen gecreëerd voor bekende merken en startups.",
     achievements: [
-      "Delivered 30+ client projects on time and budget",
-      "Won 2 industry awards for interactive web experiences",
-      "Established frontend best practices and documentation"
+      "30+ klantprojecten op tijd en binnen budget afgeleverd",
+      "2 industrie awards gewonnen voor interactieve web ervaringen",
+      "Frontend best practices en documentatie opgezet"
     ],
     technologies: ["JavaScript", "React", "GSAP", "Three.js", "Sass"]
   }
@@ -91,11 +91,11 @@ export const WorkExperience: React.FC = () => {
           <div className="flex items-center gap-4 mb-6">
             <span className="font-mono text-sm text-muted tracking-widest">02</span>
             <div className="w-12 h-px bg-muted" />
-            <span className="font-mono text-sm text-muted tracking-widest uppercase">Experience</span>
+            <span className="font-mono text-sm text-muted tracking-widest uppercase">Ervaring</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold">
-            Where I&apos;ve
-            <span style={{ color: 'var(--accent)' }}> worked</span>
+            Waar ik heb
+            <span style={{ color: 'var(--accent)' }}> gewerkt</span>
           </h2>
         </motion.div>
 
@@ -174,7 +174,7 @@ export const WorkExperience: React.FC = () => {
 
                 <div className="mb-8">
                   <h4 className="font-mono text-xs uppercase tracking-wider text-muted mb-4">
-                    Key Achievements
+                    Belangrijkste Prestaties
                   </h4>
                   <ul className="space-y-3">
                     {activeExperience.achievements.map((achievement, i) => (
@@ -188,7 +188,7 @@ export const WorkExperience: React.FC = () => {
 
                 <div>
                   <h4 className="font-mono text-xs uppercase tracking-wider text-muted mb-4">
-                    Technologies
+                    Technologieën
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {activeExperience.technologies.map((tech) => (

@@ -4,10 +4,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "5+", label: "Years Experience" },
-  { value: "50+", label: "Projects Completed" },
-  { value: "20+", label: "Happy Clients" },
-  { value: "99%", label: "Code Quality" },
+  { value: "5+", label: "Jaar Ervaring" },
+  { value: "50+", label: "Projecten Voltooid" },
+  { value: "20+", label: "Tevreden Klanten" },
+  { value: "99%", label: "Code Kwaliteit" },
 ];
 
 export const About: React.FC = () => {
@@ -26,7 +26,7 @@ export const About: React.FC = () => {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-display font-extrabold opacity-[0.02] pointer-events-none whitespace-nowrap"
         style={{ y }}
       >
-        ABOUT ME
+        OVER MIJ
       </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -41,7 +41,7 @@ export const About: React.FC = () => {
           <div className="flex items-center gap-4 mb-6">
             <span className="font-mono text-sm text-muted tracking-widest">01</span>
             <div className="w-12 h-px bg-muted" />
-            <span className="font-mono text-sm text-muted tracking-widest uppercase">About</span>
+            <span className="font-mono text-sm text-muted tracking-widest uppercase">Over</span>
           </div>
         </motion.div>
 
@@ -61,7 +61,7 @@ export const About: React.FC = () => {
                 className="absolute inset-0 flex items-center justify-center text-muted font-mono text-sm"
                 style={{ backgroundColor: 'var(--stone)' }}
               >
-                [ YOUR PHOTO ]
+                [ JOUW FOTO ]
               </div>
               
               {/* Decorative elements */}
@@ -83,8 +83,8 @@ export const About: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div>Based in</div>
-              <div className="text-lg font-display font-bold mt-1">Your City</div>
+              <div>Gevestigd in</div>
+              <div className="text-lg font-display font-bold mt-1">Jouw Stad</div>
             </motion.div>
           </motion.div>
 
@@ -97,8 +97,8 @@ export const About: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              I create digital products that
-              <span style={{ color: 'var(--accent)' }}> make an impact</span>
+              Ik creëer digitale producten die
+              <span style={{ color: 'var(--accent)' }}> impact maken</span>
             </motion.h2>
 
             <motion.div
@@ -109,16 +109,16 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p>
-                I&apos;m a full-stack developer and designer with a passion for creating 
-                exceptional digital experiences. My approach combines 
-                <span className="text-ink font-medium"> technical expertise</span> with 
-                <span className="text-ink font-medium"> creative vision</span> to build 
-                products that truly resonate with users.
+                Ik ben een full-stack ontwikkelaar en ontwerper met een passie voor het creëren 
+                van uitzonderlijke digitale ervaringen. Mijn aanpak combineert 
+                <span className="text-ink font-medium"> technische expertise</span> met 
+                <span className="text-ink font-medium"> creatieve visie</span> om 
+                producten te bouwen die echt resoneren met gebruikers.
               </p>
               <p>
-                With a background spanning startups to enterprise, I bring a unique 
-                perspective to every project. I believe great software should be both 
-                beautiful and functional—never compromising one for the other.
+                Met een achtergrond die reikt van startups tot enterprise, breng ik een uniek 
+                perspectief naar elk project. Ik geloof dat geweldige software zowel 
+                mooi als functioneel moet zijn—nooit het een ten koste van het ander.
               </p>
             </motion.div>
 

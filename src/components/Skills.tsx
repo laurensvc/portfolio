@@ -13,7 +13,7 @@ const skills: Skill[] = [
   { name: "React / Next.js", level: 95, category: "Frontend" },
   { name: "TypeScript", level: 90, category: "Frontend" },
   { name: "CSS / Tailwind", level: 92, category: "Frontend" },
-  { name: "Animation / Motion", level: 85, category: "Frontend" },
+  { name: "Animatie / Motion", level: 85, category: "Frontend" },
   { name: "Three.js / WebGL", level: 70, category: "Frontend" },
   // Backend
   { name: "Node.js", level: 88, category: "Backend" },
@@ -22,9 +22,9 @@ const skills: Skill[] = [
   { name: "GraphQL", level: 78, category: "Backend" },
   { name: "AWS / Cloud", level: 75, category: "Backend" },
   // Design
-  { name: "Figma", level: 88, category: "Design" },
-  { name: "UI/UX Design", level: 85, category: "Design" },
-  { name: "Design Systems", level: 82, category: "Design" },
+  { name: "Figma", level: 88, category: "Ontwerp" },
+  { name: "UI/UX Ontwerp", level: 85, category: "Ontwerp" },
+  { name: "Design Systems", level: 82, category: "Ontwerp" },
 ];
 
 const toolMarquee = [
@@ -65,11 +65,11 @@ export const Skills: React.FC = () => {
           <div className="flex items-center gap-4 mb-6">
             <span className="font-mono text-sm text-muted tracking-widest">03</span>
             <div className="w-12 h-px bg-muted" />
-            <span className="font-mono text-sm text-muted tracking-widest uppercase">Skills</span>
+            <span className="font-mono text-sm text-muted tracking-widest uppercase">Vaardigheden</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold">
-            My
-            <span style={{ color: 'var(--accent)' }}> toolkit</span>
+            Mijn
+            <span style={{ color: 'var(--accent)' }}> gereedschapskist</span>
           </h2>
         </motion.div>
 
@@ -137,9 +137,9 @@ export const Skills: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="text-2xl md:text-3xl font-display font-medium max-w-3xl mx-auto leading-relaxed">
-            &ldquo;I believe in choosing the
-            <span style={{ color: 'var(--accent)' }}> right tool </span>
-            for the job—not just the trendy one.&rdquo;
+            &ldquo;Ik geloof in het kiezen van het
+            <span style={{ color: 'var(--accent)' }}> juiste gereedschap </span>
+            voor de klus—niet alleen het trendy.&rdquo;
           </p>
         </motion.div>
       </div>

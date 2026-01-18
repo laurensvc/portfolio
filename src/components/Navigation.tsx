@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const navItems = [
-  { name: "About", href: "#about", number: "01" },
-  { name: "Experience", href: "#experience", number: "02" },
-  { name: "Skills", href: "#skills", number: "03" },
-  { name: "Projects", href: "#projects", number: "04" },
+  { name: "Over", href: "#about", number: "01" },
+  { name: "Ervaring", href: "#experience", number: "02" },
+  { name: "Vaardigheden", href: "#skills", number: "03" },
+  { name: "Projecten", href: "#projects", number: "04" },
   { name: "Contact", href: "#contact", number: "05" },
 ];
 
@@ -86,7 +86,7 @@ export const Navigation: React.FC = () => {
                 backgroundColor: 'var(--accent)'
               }}
             >
-              Let&apos;s Talk
+              Laten we praten
             </motion.a>
           </div>
 

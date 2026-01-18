@@ -2,46 +2,30 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "#about", number: "01" },
+  { name: "Experience", href: "#experience", number: "02" },
+  { name: "Skills", href: "#skills", number: "03" },
+  { name: "Projects", href: "#projects", number: "04" },
+  { name: "Contact", href: "#contact", number: "05" },
 ];
 
 export const Navigation: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.href.substring(1));
-      const current = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
+      setIsScrolled(window.scrollY > 100);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    setIsMobileMenuOpen(false);
+    setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -49,89 +33,115 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <>
+      {/* Fixed nav bar */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled ? "py-4" : "py-6"
+        }`}
+        style={{
+          backgroundColor: isScrolled ? 'rgba(250, 249, 247, 0.9)' : 'transparent',
+          backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        }}
+      >
+        <div className="px-6 md:px-12 lg:px-24 flex justify-between items-center">
           <motion.a
             href="#home"
             onClick={(e) => handleClick(e, "#home")}
-            className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            className="font-display font-bold text-xl"
             whileHover={{ scale: 1.05 }}
           >
-            Portfolio
+            <span style={{ color: 'var(--accent)' }}>◆</span>
           </motion.a>
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-12">
+            {navItems.slice(0, 4).map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleClick(e, item.href)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors ${
-                  activeSection === item.href.substring(1)
-                    ? "text-primary"
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
+                className="group relative font-mono text-sm uppercase tracking-wider text-muted hover:text-ink transition-colors"
               >
+                <span className="text-xs opacity-50 mr-2">{item.number}</span>
                 {item.name}
-                {activeSection === item.href.substring(1) && (
-                  <motion.div
-                    layoutId="activeSection"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
+                <span 
+                  className="absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
+                  style={{ backgroundColor: 'var(--accent)' }}
+                />
               </a>
             ))}
+            <motion.a
+              href="#contact"
+              onClick={(e) => handleClick(e, "#contact")}
+              className="px-6 py-3 font-mono text-xs uppercase tracking-wider transition-all duration-300"
+              style={{ 
+                backgroundColor: 'var(--ink)', 
+                color: 'var(--paper)' 
+              }}
+              whileHover={{ 
+                scale: 1.02,
+                backgroundColor: 'var(--accent)'
+              }}
+            >
+              Let&apos;s Talk
+            </motion.a>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden relative w-10 h-10 flex flex-col justify-center items-center gap-1.5"
+            onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <motion.span
+              className="w-6 h-0.5 bg-ink"
+              animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 4 : 0 }}
+            />
+            <motion.span
+              className="w-6 h-0.5 bg-ink"
+              animate={{ opacity: isOpen ? 0 : 1 }}
+            />
+            <motion.span
+              className="w-6 h-0.5 bg-ink"
+              animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -4 : 0 }}
+            />
           </button>
         </div>
+      </motion.nav>
 
-        {/* Mobile menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-foreground/10"
-            >
-              <div className="px-4 py-4 space-y-2">
-                {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => handleClick(e, item.href)}
-                    className={`block px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
-                      activeSection === item.href.substring(1)
-                        ? "text-primary bg-primary/10"
-                        : "text-foreground/70 hover:text-foreground hover:bg-foreground/5"
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.nav>
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 md:hidden"
+            style={{ backgroundColor: 'var(--paper)' }}
+          >
+            <div className="flex flex-col justify-center items-center h-full gap-8">
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleClick(e, item.href)}
+                  className="text-4xl font-display font-bold"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 30 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <span className="font-mono text-sm text-muted mr-4">{item.number}</span>
+                  {item.name}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };

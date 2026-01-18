@@ -1,157 +1,226 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 interface Project {
+  id: string;
   title: string;
+  category: string;
+  year: string;
   description: string;
-  longDescription: string;
   technologies: string[];
   image: string;
+  color: string;
   liveUrl?: string;
   githubUrl?: string;
-  featured?: boolean;
 }
 
 const projects: Project[] = [
   {
+    id: "01",
+    title: "Fintech Dashboard",
+    category: "Web Application",
+    year: "2024",
+    description: "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights for institutional investors.",
+    technologies: ["Next.js", "TypeScript", "D3.js", "PostgreSQL"],
+    image: "/projects/project1.jpg",
+    color: "#ff4d00",
+    liveUrl: "#",
+    githubUrl: "#"
+  },
+  {
+    id: "02",
     title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with payment integration",
-    longDescription:
-      "A comprehensive e-commerce platform built with modern technologies, featuring user authentication, product management, shopping cart, and secure payment processing.",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-    image: "gradient-1",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: true,
+    category: "Full Stack",
+    year: "2023",
+    description: "Headless commerce solution with custom CMS, payment integration, and inventory management serving 100K+ monthly users.",
+    technologies: ["React", "Node.js", "Stripe", "MongoDB"],
+    image: "/projects/project2.jpg",
+    color: "#00d4aa",
+    liveUrl: "#",
+    githubUrl: "#"
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task management with real-time updates",
-    longDescription:
-      "A real-time collaborative task management application that allows teams to organize, track, and complete projects efficiently with live updates and notifications.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-    image: "gradient-2",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    featured: true,
+    id: "03",
+    title: "Design System",
+    category: "Component Library",
+    year: "2023",
+    description: "Enterprise-grade design system with 50+ components, comprehensive documentation, and Figma integration used across multiple product teams.",
+    technologies: ["React", "Storybook", "TypeScript", "Radix UI"],
+    image: "/projects/project3.jpg",
+    color: "#0a0a0a",
+    liveUrl: "#",
+    githubUrl: "#"
   },
   {
-    title: "Analytics Dashboard",
-    description: "Data visualization and analytics platform",
-    longDescription:
-      "An interactive analytics dashboard that provides insights through beautiful charts and graphs, with real-time data updates and customizable reports.",
-    technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"],
-    image: "gradient-3",
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-  },
+    id: "04",
+    title: "AI Content Studio",
+    category: "SaaS Product",
+    year: "2024",
+    description: "AI-powered content generation and management platform with collaborative editing, version control, and publishing workflows.",
+    technologies: ["Next.js", "OpenAI", "Prisma", "Redis"],
+    image: "/projects/project4.jpg",
+    color: "#ff4d00",
+    liveUrl: "#"
+  }
 ];
 
-const gradientClasses = {
-  "gradient-1": "from-blue-500 to-purple-600",
-  "gradient-2": "from-green-500 to-teal-600",
-  "gradient-3": "from-orange-500 to-red-600",
-};
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-};
-
 export const Projects: React.FC = () => {
-  return (
-    <section id="projects" className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={{
-            animate: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold mb-4 text-center"
-          >
-            Featured Projects
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-lg text-foreground/70 mb-12 text-center max-w-2xl mx-auto"
-          >
-            A selection of projects I&apos;ve worked on, showcasing my skills and experience
-          </motion.p>
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
-              >
-                <div
-                  className={`h-48 bg-gradient-to-br ${gradientClasses[project.image as keyof typeof gradientClasses]} relative overflow-hidden`}
-                >
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-                  {project.featured && (
-                    <div className="absolute top-4 right-4 px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full">
-                      Featured
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-foreground/70 mb-4 text-sm">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-primary/10 text-primary rounded text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-4">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors text-sm font-medium"
-                      >
-                        <Github className="w-4 h-4" />
-                        Code
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+  return (
+    <section id="projects" className="py-32 md:py-48 px-6 md:px-12 lg:px-24 bg-ink relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-20"
+        >
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-sm text-paper/50 tracking-widest">04</span>
+            <div className="w-12 h-px bg-paper/30" />
+            <span className="font-mono text-sm text-paper/50 tracking-widest uppercase">Work</span>
           </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-paper">
+            Selected
+            <span style={{ color: 'var(--accent)' }}> projects</span>
+          </h2>
+        </motion.div>
+
+        {/* Projects list */}
+        <div className="space-y-0">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group"
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              <a 
+                href={project.liveUrl}
+                className="block py-10 border-t border-paper/10 transition-colors hover:border-paper/30"
+              >
+                <div className="grid grid-cols-12 gap-4 items-center">
+                  {/* Number */}
+                  <div className="col-span-1 hidden lg:block">
+                    <span className="font-mono text-sm text-paper/30">{project.id}</span>
+                  </div>
+
+                  {/* Title */}
+                  <div className="col-span-12 lg:col-span-5">
+                    <motion.h3 
+                      className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-paper transition-colors"
+                      style={{ 
+                        color: hoveredProject === project.id ? project.color : undefined 
+                      }}
+                    >
+                      {project.title}
+                    </motion.h3>
+                  </div>
+
+                  {/* Category & Year */}
+                  <div className="col-span-6 lg:col-span-3">
+                    <span className="font-mono text-sm text-paper/50 block">{project.category}</span>
+                    <span className="font-mono text-sm text-paper/30">{project.year}</span>
+                  </div>
+
+                  {/* Technologies */}
+                  <div className="col-span-6 lg:col-span-2 text-right lg:text-left">
+                    <div className="flex flex-wrap gap-2 justify-end lg:justify-start">
+                      {project.technologies.slice(0, 2).map((tech) => (
+                        <span 
+                          key={tech}
+                          className="font-mono text-xs text-paper/40"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="col-span-12 lg:col-span-1 hidden lg:flex justify-end">
+                    <motion.div
+                      animate={{ x: hoveredProject === project.id ? 10 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <svg 
+                        width="24" 
+                        height="24" 
+                        viewBox="0 0 24 24" 
+                        fill="none"
+                        className="text-paper/50 group-hover:text-paper transition-colors"
+                      >
+                        <path 
+                          d="M7 17L17 7M17 7H7M17 7V17" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* Expandable description */}
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    height: hoveredProject === project.id ? "auto" : 0,
+                    opacity: hoveredProject === project.id ? 1 : 0
+                  }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-6 grid grid-cols-12 gap-4">
+                    <div className="col-span-12 lg:col-span-6 lg:col-start-2">
+                      <p className="text-paper/60 leading-relaxed">{project.description}</p>
+                    </div>
+                    <div className="col-span-12 lg:col-span-4 flex gap-4 mt-4 lg:mt-0 lg:justify-end">
+                      {project.liveUrl && (
+                        <span className="font-mono text-xs text-paper/50 uppercase tracking-wider hover:text-accent transition-colors">
+                          View Live →
+                        </span>
+                      )}
+                      {project.githubUrl && (
+                        <span className="font-mono text-xs text-paper/50 uppercase tracking-wider hover:text-accent transition-colors">
+                          Source →
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </a>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* More work CTA */}
+        <motion.div
+          className="mt-20 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.a
+            href="#"
+            className="inline-flex items-center gap-3 font-mono text-sm text-paper/50 uppercase tracking-wider hover:text-accent transition-colors"
+            whileHover={{ x: 10 }}
+          >
+            View all projects
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
+          </motion.a>
         </motion.div>
       </div>
     </section>

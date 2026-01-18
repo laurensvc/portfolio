@@ -1,95 +1,186 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Twitter } from "lucide-react";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-};
 
 const socialLinks = [
-  { icon: Mail, label: "Email", href: "mailto:your.email@example.com", color: "hover:text-red-500" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/yourprofile", color: "hover:text-blue-600" },
-  { icon: Github, label: "GitHub", href: "https://github.com/yourusername", color: "hover:text-gray-800 dark:hover:text-gray-200" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com/yourusername", color: "hover:text-blue-400" },
+  { name: "GitHub", handle: "@yourusername", url: "https://github.com" },
+  { name: "LinkedIn", handle: "/in/yourprofile", url: "https://linkedin.com" },
+  { name: "Twitter", handle: "@yourhandle", url: "https://twitter.com" },
+  { name: "Dribbble", handle: "@yourhandle", url: "https://dribbble.com" },
 ];
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-32 md:py-48 px-6 md:px-12 lg:px-24 bg-paper relative overflow-hidden">
+      {/* Large background text */}
+      <motion.div 
+        className="absolute bottom-0 left-0 right-0 text-[15vw] font-display font-extrabold opacity-[0.02] pointer-events-none whitespace-nowrap leading-none"
+        initial={{ x: "100%" }}
+        whileInView={{ x: "0%" }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, ease: [0.33, 1, 0.68, 1] }}
+      >
+        LET&apos;S TALK
+      </motion.div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header */}
         <motion.div
-          initial="initial"
-          whileInView="animate"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          variants={{
-            animate: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-          className="text-center"
+          transition={{ duration: 0.6 }}
+          className="mb-20"
         >
-          <motion.h2
-            variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold mb-4"
-          >
-            Let&apos;s Connect
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto"
-          >
-            I&apos;m always open to discussing new opportunities, interesting projects, or just
-            having a chat about technology. Feel free to reach out!
-          </motion.p>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="font-mono text-sm text-muted tracking-widest">05</span>
+            <div className="w-12 h-px bg-muted" />
+            <span className="font-mono text-sm text-muted tracking-widest uppercase">Contact</span>
+          </div>
+        </motion.div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* Left - CTA */}
           <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap justify-center gap-6 mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className={`flex flex-col items-center gap-2 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all ${social.color}`}
-              >
-                <social.icon className="w-8 h-8" />
-                <span className="text-sm font-medium">{social.label}</span>
-              </motion.a>
-            ))}
-          </motion.div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-8">
+              Have a project in mind?
+              <span style={{ color: 'var(--accent)' }}> Let&apos;s create something great together.</span>
+            </h2>
 
-          <motion.div
-            variants={fadeInUp}
-            className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg"
-          >
-            <h3 className="text-2xl font-bold mb-4">Send me a message</h3>
-            <p className="text-foreground/70 mb-6">
-              Prefer email? Drop me a line at{" "}
-              <a
-                href="mailto:your.email@example.com"
-                className="text-primary hover:underline font-semibold"
-              >
-                your.email@example.com
-              </a>
+            <p className="text-lg text-muted leading-relaxed mb-12">
+              I&apos;m currently available for freelance work and full-time opportunities. 
+              If you have a project that needs a combination of design thinking and 
+              technical expertise, I&apos;d love to hear about it.
             </p>
+
             <motion.a
               href="mailto:your.email@example.com"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-primary/50"
+              className="group inline-flex items-center gap-4"
+              whileHover={{ x: 10 }}
             >
-              Get In Touch
+              <span 
+                className="text-2xl md:text-3xl font-display font-bold transition-colors group-hover:text-accent"
+                style={{ color: 'var(--ink)' }}
+              >
+                your.email@example.com
+              </span>
+              <svg 
+                width="32" 
+                height="32" 
+                viewBox="0 0 32 32" 
+                fill="none"
+                className="text-muted group-hover:text-accent transition-colors"
+              >
+                <path 
+                  d="M9 23L23 9M23 9H9M23 9V23" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+              </svg>
             </motion.a>
           </motion.div>
+
+          {/* Right - Social links */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3 className="font-mono text-xs uppercase tracking-widest text-muted mb-8">
+              Find me on
+            </h3>
+
+            <div className="space-y-0">
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between py-6 border-b transition-colors"
+                  style={{ borderColor: 'var(--stone)' }}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ x: 10 }}
+                >
+                  <div>
+                    <span className="text-xl font-display font-bold group-hover:text-accent transition-colors">
+                      {link.name}
+                    </span>
+                    <span className="font-mono text-sm text-muted ml-4">
+                      {link.handle}
+                    </span>
+                  </div>
+                  <svg 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 20 20" 
+                    fill="none"
+                    className="text-muted group-hover:text-accent transition-colors"
+                  >
+                    <path 
+                      d="M5 15L15 5M15 5H5M15 5V15" 
+                      stroke="currentColor" 
+                      strokeWidth="1.5" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Availability badge */}
+            <motion.div
+              className="mt-12 p-6 border"
+              style={{ borderColor: 'var(--stone)' }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <span 
+                  className="w-2 h-2 rounded-full animate-pulse"
+                  style={{ backgroundColor: 'var(--highlight)' }}
+                />
+                <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                  Currently available
+                </span>
+              </div>
+              <p className="text-sm text-muted">
+                Open to full-time positions and exciting freelance projects. 
+                Response time is typically within 24 hours.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Footer */}
+        <motion.div
+          className="mt-32 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderColor: 'var(--stone)' }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="font-mono text-sm text-muted">
+            © 2024 Your Name. All rights reserved.
+          </div>
+          <div className="font-mono text-sm text-muted">
+            Designed & Built with precision
+          </div>
         </motion.div>
       </div>
     </section>

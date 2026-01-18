@@ -1,115 +1,236 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { useEffect, useState } from "react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-};
+const roles = ["Developer", "Designer", "Creator", "Engineer"];
 
 export const Hero: React.FC = () => {
-  const scrollToNext = () => {
-    const element = document.getElementById("about");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+  const [currentRole, setCurrentRole] = useState(0);
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const updateTime = () => {
+      setTime(new Date().toLocaleTimeString("en-US", { 
+        hour: "2-digit", 
+        minute: "2-digit",
+        hour12: false 
+      }));
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section id="home" className="flex items-center justify-center min-h-screen px-4 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
-      </div>
+    <section id="home" className="min-h-screen relative overflow-hidden bg-paper">
+      {/* Grid background */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(var(--ink) 1px, transparent 1px),
+            linear-gradient(90deg, var(--ink) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }}
+      />
 
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={{
-            animate: {
-              transition: {
-                staggerChildren: 0.2,
-              },
-            },
-          }}
+      {/* Floating accent shapes */}
+      <motion.div
+        className="absolute top-20 right-[15%] w-24 h-24 rounded-full"
+        style={{ backgroundColor: 'var(--accent)', opacity: 0.1 }}
+        animate={{ 
+          y: [0, -20, 0],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-32 left-[10%] w-16 h-16"
+        style={{ backgroundColor: 'var(--highlight)', opacity: 0.15 }}
+        animate={{ 
+          rotate: [0, 90, 0],
+          y: [0, 15, 0]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Main content */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-24 py-8">
+        {/* Top bar */}
+        <motion.div 
+          className="flex justify-between items-center font-mono text-sm text-muted"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <motion.p
-            variants={fadeInUp}
-            className="text-lg md:text-xl text-primary font-semibold mb-4"
-          >
-            Hello, I&apos;m
-          </motion.p>
-          <motion.h1
-            variants={fadeInUp}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
-          >
-            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite]">
-              Your Name
-            </span>
-          </motion.h1>
-          <motion.h2
-            variants={fadeInUp}
-            className="text-2xl md:text-4xl font-semibold mb-6 text-foreground/80"
-          >
-            Full Stack Developer
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-lg md:text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed"
-          >
-            I build exceptional digital experiences with modern technologies.
-            Passionate about creating scalable solutions and delivering quality code.
-          </motion.p>
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-primary/50"
-            >
-              View My Work
-            </motion.a>
-            <motion.a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors"
-            >
-              Get In Touch
-            </motion.a>
-          </motion.div>
+          <span>PORTFOLIO © 2024</span>
+          <span className="hidden md:block">AVAILABLE FOR WORK</span>
+          <span>{time}</span>
         </motion.div>
 
-        <motion.button
-          onClick={scrollToNext}
+        {/* Center content */}
+        <div className="flex-1 flex flex-col justify-center py-20">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {/* Eyebrow */}
+            <motion.p 
+              className="font-mono text-sm md:text-base text-muted mb-6 tracking-widest uppercase"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <span className="inline-block w-12 h-px bg-muted mr-4 align-middle" />
+              Hello, I&apos;m
+            </motion.p>
+
+            {/* Name - Large display */}
+            <div className="overflow-hidden mb-4">
+              <motion.h1 
+                className="text-[12vw] md:text-[10vw] lg:text-[8vw] font-display font-extrabold leading-[0.85] tracking-tight"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+              >
+                YOUR
+              </motion.h1>
+            </div>
+            <div className="overflow-hidden mb-8">
+              <motion.h1 
+                className="text-[12vw] md:text-[10vw] lg:text-[8vw] font-display font-extrabold leading-[0.85] tracking-tight flex items-baseline gap-4"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
+              >
+                NAME
+                <span 
+                  className="text-[4vw] md:text-[3vw] font-mono font-normal"
+                  style={{ color: 'var(--accent)' }}
+                >
+                  .dev
+                </span>
+              </motion.h1>
+            </div>
+
+            {/* Role switcher */}
+            <motion.div
+              className="flex items-center gap-4 mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            >
+              <span className="font-mono text-muted text-sm">I am a</span>
+              <div className="relative h-10 overflow-hidden">
+                <motion.div
+                  key={currentRole}
+                  initial={{ y: 40, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -40, opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-2xl md:text-3xl font-display font-bold"
+                  style={{ color: 'var(--accent)' }}
+                >
+                  {roles[currentRole]}
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Description */}
+            <motion.p 
+              className="max-w-xl text-lg md:text-xl text-muted leading-relaxed mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              Crafting digital experiences that merge 
+              <span className="text-ink font-medium"> bold aesthetics </span> 
+              with 
+              <span className="text-ink font-medium"> flawless functionality</span>. 
+              Based in Your City.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+            >
+              <motion.a
+                href="#work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#experience")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="group relative px-8 py-4 font-mono text-sm uppercase tracking-wider overflow-hidden"
+                style={{ backgroundColor: 'var(--ink)', color: 'var(--paper)' }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="relative z-10">View Work</span>
+                <motion.div
+                  className="absolute inset-0"
+                  style={{ backgroundColor: 'var(--accent)' }}
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: 0 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
+              <motion.a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-8 py-4 font-mono text-sm uppercase tracking-wider border-2 transition-colors duration-300"
+                style={{ borderColor: 'var(--ink)', color: 'var(--ink)' }}
+                whileHover={{ 
+                  backgroundColor: 'var(--ink)',
+                  color: 'var(--paper)'
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Let&apos;s Talk
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Bottom bar */}
+        <motion.div 
+          className="flex justify-between items-center text-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-foreground/60 hover:text-primary transition-colors"
-          aria-label="Scroll down"
+          transition={{ duration: 0.6, delay: 1 }}
         >
+          <div className="flex gap-6 font-mono text-muted">
+            <a href="#" className="hover:text-accent transition-colors">GH</a>
+            <a href="#" className="hover:text-accent transition-colors">LI</a>
+            <a href="#" className="hover:text-accent transition-colors">TW</a>
+          </div>
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            className="hidden md:flex items-center gap-2 font-mono text-muted cursor-pointer"
+            animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
+            onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
           >
-            <ArrowDown className="w-6 h-6" />
+            <span>SCROLL</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="rotate-90">
+              <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5"/>
+            </svg>
           </motion.div>
-        </motion.button>
+        </motion.div>
       </div>
     </section>
   );

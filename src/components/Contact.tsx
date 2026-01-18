@@ -176,7 +176,7 @@ export const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="font-mono text-sm text-muted">
-            © 2024 Jouw Naam. Alle rechten voorbehouden.
+            © 2026 VCworks. Alle rechten voorbehouden.
           </div>
           <div className="font-mono text-sm text-muted">
             Ontworpen & Gebouwd met precisie

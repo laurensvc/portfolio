@@ -84,7 +84,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <div>Gevestigd in</div>
-              <div className="text-lg font-display font-bold mt-1">Jouw Stad</div>
+              <div className="text-lg font-display font-bold mt-1">Schilde</div>
             </motion.div>
           </motion.div>
 

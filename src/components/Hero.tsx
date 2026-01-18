@@ -151,7 +151,7 @@ export const Hero: React.FC = () => {
               <span className="text-ink font-medium"> gedurfde esthetiek </span> 
               combineren met 
               <span className="text-ink font-medium"> vlekkeloze functionaliteit</span>. 
-              Gevestigd in Jouw Stad.
+              Gevestigd in Schilde.
             </motion.p>
 
             {/* CTA Buttons */}

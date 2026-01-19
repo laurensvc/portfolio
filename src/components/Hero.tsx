@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-
-const roles = ["Ontwikkelaar", "Ontwerper", "Maker", "Ingenieur"];
+import { roles } from "@/data/hero";
 
 export const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -74,8 +73,7 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span>PORTFOLIO © 2024</span>
-          <span className="hidden md:block">BESCHIKBAAR VOOR WERK</span>
+          <span>PORTFOLIO © {new Date().getFullYear()}</span>
           <span>{time}</span>
         </motion.div>
 
@@ -115,7 +113,7 @@ export const Hero: React.FC = () => {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
               >
-                from <div style={{ color: "var(--accent)" }}>VCWORKS</div>
+                <span className="text-accent">VCWORKS</span>
               </motion.h1>
             </div>
 

@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const socialLinks = [
-  { name: "GitHub", handle: "@yourusername", url: "https://github.com" },
-  { name: "LinkedIn", handle: "/in/yourprofile", url: "https://linkedin.com" },
-  { name: "Twitter", handle: "@yourhandle", url: "https://twitter.com" },
-  { name: "Dribbble", handle: "@yourhandle", url: "https://dribbble.com" },
-];
+import { socialLinks } from "@/data/contact";
 
 export const Contact: React.FC = () => {
   return (

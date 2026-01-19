@@ -2,14 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-
-const navItems = [
-  { name: "Over", href: "#about", number: "01" },
-  { name: "Ervaring", href: "#experience", number: "02" },
-  { name: "Vaardigheden", href: "#skills", number: "03" },
-  { name: "Projecten", href: "#projects", number: "04" },
-  { name: "Contact", href: "#contact", number: "05" },
-];
+import { navItems } from "@/data/navigation";
 
 export const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

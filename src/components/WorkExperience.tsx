@@ -2,63 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-
-interface Experience {
-  id: string;
-  company: string;
-  role: string;
-  period: string;
-  type: string;
-  description: string;
-  achievements: string[];
-  technologies: string[];
-}
-
-const experiences: Experience[] = [
-  {
-    id: "01",
-    company: "Company One",
-    role: "Senior Software Engineer",
-    period: "2022 — Heden",
-    type: "Volledige baan",
-    description:
-      "Leading frontend architecture and design systems for a fintech platform serving millions of users.",
-    achievements: [
-      "Architected a component library used across 5 product teams",
-      "Reduced bundle size by 40% through code splitting strategies",
-      "Mentored 4 junior developers to senior positions",
-    ],
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL", "AWS"],
-  },
-  {
-    id: "02",
-    company: "Company Two",
-    role: "Full Stack Developer",
-    period: "2020 — 2022",
-    type: "Volledige baan",
-    description: "Schaalbare web applicaties en API's gebouwd voor een enterprise SaaS product.",
-    achievements: [
-      "Real-time samenwerkingsfuncties ontwikkeld met WebSockets",
-      "CI/CD pipelines geïmplementeerd die deployment tijd met 60% verminderden",
-      "Migratie geleid van monolith naar microservices architectuur",
-    ],
-    technologies: ["Vue.js", "Node.js", "PostgreSQL", "Docker", "Redis"],
-  },
-  {
-    id: "03",
-    company: "Agency Name",
-    role: "Frontend Developer",
-    period: "2018 — 2020",
-    type: "Volledige baan",
-    description: "Op maat gemaakte digitale ervaringen gecreëerd voor bekende merken en startups.",
-    achievements: [
-      "30+ klantprojecten op tijd en binnen budget afgeleverd",
-      "2 industrie awards gewonnen voor interactieve web ervaringen",
-      "Frontend best practices en documentatie opgezet",
-    ],
-    technologies: ["JavaScript", "React", "GSAP", "Three.js", "Sass"],
-  },
-];
+import { experiences } from "@/data/experience";
 
 export const WorkExperience: React.FC = () => {
   const [activeExp, setActiveExp] = useState<string>("01");

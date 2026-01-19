@@ -2,13 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-const stats = [
-  { value: "5+", label: "Jaar Ervaring" },
-  { value: "50+", label: "Projecten Voltooid" },
-  { value: "20+", label: "Tevreden Klanten" },
-  { value: "99%", label: "Code Kwaliteit" },
-];
+import { stats } from "@/data/about";
 
 export const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -59,7 +59,7 @@ export const About: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative aspect-[4/5] bg-stone overflow-hidden group">
+            <div className="relative aspect-4/5 bg-stone overflow-hidden group">
               {/* Placeholder for your photo */}
               <div
                 className="absolute inset-0 flex items-center justify-center text-muted font-mono text-sm"

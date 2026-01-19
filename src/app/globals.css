@@ -1,5 +1,5 @@
 /* Custom font imports - must be first */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap");
 
 @import "tailwindcss";
 
@@ -12,10 +12,10 @@
   --color-accent: #ff4d00;
   --color-accent-light: #ff7a3d;
   --color-highlight: #00d4aa;
-  
+
   /* Typography */
-  --font-display: 'Syne', sans-serif;
-  --font-mono: 'Space Mono', monospace;
+  --font-display: "Syne", sans-serif;
+  --font-mono: "Space Mono", monospace;
 }
 
 :root {
@@ -45,7 +45,7 @@
     scroll-behavior: smooth;
     font-family: var(--font-display);
   }
-  
+
   body {
     background-color: var(--paper);
     color: var(--ink);
@@ -65,35 +65,35 @@
   .font-display {
     font-family: var(--font-display);
   }
-  
+
   .font-mono {
     font-family: var(--font-mono);
   }
-  
+
   .text-ink {
     color: var(--ink);
   }
-  
+
   .text-muted {
     color: var(--muted);
   }
-  
+
   .text-accent {
     color: var(--accent);
   }
-  
+
   .bg-paper {
     background-color: var(--paper);
   }
-  
+
   .bg-stone {
     background-color: var(--stone);
   }
-  
+
   .bg-ink {
     background-color: var(--ink);
   }
-  
+
   .border-stone {
     border-color: var(--stone);
   }
@@ -102,7 +102,7 @@
   .hover-lift {
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  
+
   .hover-lift:hover {
     transform: translateY(-8px);
   }
@@ -139,16 +139,26 @@
   }
 
   /* Stagger delays */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
 }
 
 /* Noise texture overlay */
 .noise::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;

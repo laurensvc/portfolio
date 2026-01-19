@@ -22,55 +22,62 @@ const projects: Project[] = [
     title: "Fintech Dashboard",
     category: "Web Applicatie",
     year: "2024",
-    description: "Een uitgebreid financieel analytics platform met real-time data visualisatie, portefeuillebeheer en AI-gestuurde inzichten voor institutionele beleggers.",
+    description:
+      "Een uitgebreid financieel analytics platform met real-time data visualisatie, portefeuillebeheer en AI-gestuurde inzichten voor institutionele beleggers.",
     technologies: ["Next.js", "TypeScript", "D3.js", "PostgreSQL"],
     image: "/projects/project1.jpg",
     color: "#ff4d00",
     liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "#",
   },
   {
     id: "02",
     title: "E-Commerce Platform",
     category: "Full Stack",
     year: "2023",
-    description: "Headless commerce oplossing met aangepast CMS, betalingsintegratie en voorraadbeheer voor meer dan 100K maandelijkse gebruikers.",
+    description:
+      "Headless commerce oplossing met aangepast CMS, betalingsintegratie en voorraadbeheer voor meer dan 100K maandelijkse gebruikers.",
     technologies: ["React", "Node.js", "Stripe", "MongoDB"],
     image: "/projects/project2.jpg",
     color: "#00d4aa",
     liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "#",
   },
   {
     id: "03",
     title: "Design System",
     category: "Component Bibliotheek",
     year: "2023",
-    description: "Enterprise-grade design system met 50+ componenten, uitgebreide documentatie en Figma integratie gebruikt door meerdere productteams.",
+    description:
+      "Enterprise-grade design system met 50+ componenten, uitgebreide documentatie en Figma integratie gebruikt door meerdere productteams.",
     technologies: ["React", "Storybook", "TypeScript", "Radix UI"],
     image: "/projects/project3.jpg",
     color: "#0a0a0a",
     liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "#",
   },
   {
     id: "04",
     title: "AI Content Studio",
     category: "SaaS Product",
     year: "2024",
-    description: "AI-gestuurd content generatie- en beheerplatform met collaboratieve editing, versiebeheer en publicatieworkflows.",
+    description:
+      "AI-gestuurd content generatie- en beheerplatform met collaboratieve editing, versiebeheer en publicatieworkflows.",
     technologies: ["Next.js", "OpenAI", "Prisma", "Redis"],
     image: "/projects/project4.jpg",
     color: "#ff4d00",
-    liveUrl: "#"
-  }
+    liveUrl: "#",
+  },
 ];
 
 export const Projects: React.FC = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
-    <section id="projects" className="py-32 md:py-48 px-6 md:px-12 lg:px-24 bg-ink relative overflow-hidden">
+    <section
+      id="projects"
+      className="py-32 md:py-48 px-6 md:px-12 lg:px-24 bg-ink relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
         <motion.div
@@ -87,7 +94,7 @@ export const Projects: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-paper">
             Geselecteerde
-            <span style={{ color: 'var(--accent)' }}> projecten</span>
+            <span style={{ color: "var(--accent)" }}> projecten</span>
           </h2>
         </motion.div>
 
@@ -104,7 +111,7 @@ export const Projects: React.FC = () => {
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              <a 
+              <a
                 href={project.liveUrl}
                 className="block py-10 border-t border-paper/10 transition-colors hover:border-paper/30"
               >
@@ -116,10 +123,10 @@ export const Projects: React.FC = () => {
 
                   {/* Title */}
                   <div className="col-span-12 lg:col-span-5">
-                    <motion.h3 
+                    <motion.h3
                       className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-paper transition-colors"
-                      style={{ 
-                        color: hoveredProject === project.id ? project.color : undefined 
+                      style={{
+                        color: hoveredProject === project.id ? project.color : undefined,
                       }}
                     >
                       {project.title}
@@ -128,7 +135,9 @@ export const Projects: React.FC = () => {
 
                   {/* Category & Year */}
                   <div className="col-span-6 lg:col-span-3">
-                    <span className="font-mono text-sm text-paper/50 block">{project.category}</span>
+                    <span className="font-mono text-sm text-paper/50 block">
+                      {project.category}
+                    </span>
                     <span className="font-mono text-sm text-paper/30">{project.year}</span>
                   </div>
 
@@ -136,10 +145,7 @@ export const Projects: React.FC = () => {
                   <div className="col-span-6 lg:col-span-2 text-right lg:text-left">
                     <div className="flex flex-wrap gap-2 justify-end lg:justify-start">
                       {project.technologies.slice(0, 2).map((tech) => (
-                        <span 
-                          key={tech}
-                          className="font-mono text-xs text-paper/40"
-                        >
+                        <span key={tech} className="font-mono text-xs text-paper/40">
                           {tech}
                         </span>
                       ))}
@@ -152,18 +158,18 @@ export const Projects: React.FC = () => {
                       animate={{ x: hoveredProject === project.id ? 10 : 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <svg 
-                        width="24" 
-                        height="24" 
-                        viewBox="0 0 24 24" 
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
                         fill="none"
                         className="text-paper/50 group-hover:text-paper transition-colors"
                       >
-                        <path 
-                          d="M7 17L17 7M17 7H7M17 7V17" 
-                          stroke="currentColor" 
-                          strokeWidth="2" 
-                          strokeLinecap="round" 
+                        <path
+                          d="M7 17L17 7M17 7H7M17 7V17"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                       </svg>
@@ -174,9 +180,9 @@ export const Projects: React.FC = () => {
                 {/* Expandable description */}
                 <motion.div
                   initial={false}
-                  animate={{ 
+                  animate={{
                     height: hoveredProject === project.id ? "auto" : 0,
-                    opacity: hoveredProject === project.id ? 1 : 0
+                    opacity: hoveredProject === project.id ? 1 : 0,
                   }}
                   className="overflow-hidden"
                 >
@@ -218,7 +224,7 @@ export const Projects: React.FC = () => {
           >
             Bekijk alle projecten
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" strokeWidth="1.5" />
             </svg>
           </motion.a>
         </motion.div>

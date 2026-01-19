@@ -42,8 +42,8 @@ export const Navigation: React.FC = () => {
           isScrolled ? "py-4" : "py-6"
         }`}
         style={{
-          backgroundColor: isScrolled ? 'rgba(250, 249, 247, 0.9)' : 'transparent',
-          backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+          backgroundColor: isScrolled ? "rgba(250, 249, 247, 0.9)" : "transparent",
+          backdropFilter: isScrolled ? "blur(10px)" : "none",
         }}
       >
         <div className="px-6 md:px-12 lg:px-24 flex justify-between items-center">
@@ -53,7 +53,7 @@ export const Navigation: React.FC = () => {
             className="font-display font-bold text-xl"
             whileHover={{ scale: 1.05 }}
           >
-            <span style={{ color: 'var(--accent)' }}>◆</span>
+            <span style={{ color: "var(--accent)" }}>◆</span>
           </motion.a>
 
           {/* Desktop nav */}
@@ -67,9 +67,9 @@ export const Navigation: React.FC = () => {
               >
                 <span className="text-xs opacity-50 mr-2">{item.number}</span>
                 {item.name}
-                <span 
+                <span
                   className="absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full"
-                  style={{ backgroundColor: 'var(--accent)' }}
+                  style={{ backgroundColor: "var(--accent)" }}
                 />
               </a>
             ))}
@@ -77,13 +77,13 @@ export const Navigation: React.FC = () => {
               href="#contact"
               onClick={(e) => handleClick(e, "#contact")}
               className="px-6 py-3 font-mono text-xs uppercase tracking-wider transition-all duration-300"
-              style={{ 
-                backgroundColor: 'var(--ink)', 
-                color: 'var(--paper)' 
+              style={{
+                backgroundColor: "var(--ink)",
+                color: "var(--paper)",
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
-                backgroundColor: 'var(--accent)'
+                backgroundColor: "var(--accent)",
               }}
             >
               Laten we praten
@@ -100,10 +100,7 @@ export const Navigation: React.FC = () => {
               className="w-6 h-0.5 bg-ink"
               animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 4 : 0 }}
             />
-            <motion.span
-              className="w-6 h-0.5 bg-ink"
-              animate={{ opacity: isOpen ? 0 : 1 }}
-            />
+            <motion.span className="w-6 h-0.5 bg-ink" animate={{ opacity: isOpen ? 0 : 1 }} />
             <motion.span
               className="w-6 h-0.5 bg-ink"
               animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -4 : 0 }}
@@ -120,7 +117,7 @@ export const Navigation: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-40 md:hidden"
-            style={{ backgroundColor: 'var(--paper)' }}
+            style={{ backgroundColor: "var(--paper)" }}
           >
             <div className="flex flex-col justify-center items-center h-full gap-8">
               {navItems.map((item, index) => (

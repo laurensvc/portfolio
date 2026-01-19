@@ -28,25 +28,43 @@ const skills: Skill[] = [
 ];
 
 const toolMarquee = [
-  "React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "AWS", "Docker", 
-  "Figma", "Git", "GraphQL", "Redis", "Tailwind", "Prisma", "Vercel"
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "PostgreSQL",
+  "AWS",
+  "Docker",
+  "Figma",
+  "Git",
+  "GraphQL",
+  "Redis",
+  "Tailwind",
+  "Prisma",
+  "Vercel",
 ];
 
 export const Skills: React.FC = () => {
-  const categories = [...new Set(skills.map(s => s.category))];
+  const categories = [...new Set(skills.map((s) => s.category))];
 
   return (
-    <section id="skills" className="py-32 md:py-48 px-6 md:px-12 lg:px-24 bg-paper relative overflow-hidden">
+    <section
+      id="skills"
+      className="py-32 md:py-48 px-6 md:px-12 lg:px-24 bg-paper relative overflow-hidden"
+    >
       {/* Marquee */}
-      <div className="absolute top-0 left-0 right-0 py-4 border-y overflow-hidden" style={{ borderColor: 'var(--stone)' }}>
-        <motion.div 
+      <div
+        className="absolute top-0 left-0 right-0 py-4 border-y overflow-hidden"
+        style={{ borderColor: "var(--stone)" }}
+      >
+        <motion.div
           className="flex whitespace-nowrap"
           animate={{ x: [0, "-50%"] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         >
           {[...toolMarquee, ...toolMarquee].map((tool, i) => (
             <span key={i} className="font-mono text-sm text-muted mx-8 flex items-center gap-2">
-              <span style={{ color: 'var(--accent)' }}>◆</span>
+              <span style={{ color: "var(--accent)" }}>◆</span>
               {tool}
             </span>
           ))}
@@ -65,11 +83,13 @@ export const Skills: React.FC = () => {
           <div className="flex items-center gap-4 mb-6">
             <span className="font-mono text-sm text-muted tracking-widest">03</span>
             <div className="w-12 h-px bg-muted" />
-            <span className="font-mono text-sm text-muted tracking-widest uppercase">Vaardigheden</span>
+            <span className="font-mono text-sm text-muted tracking-widest uppercase">
+              Vaardigheden
+            </span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold">
             Mijn
-            <span style={{ color: 'var(--accent)' }}> skills</span>
+            <span style={{ color: "var(--accent)" }}> skills</span>
           </h2>
         </motion.div>
 
@@ -84,44 +104,58 @@ export const Skills: React.FC = () => {
               transition={{ duration: 0.6, delay: catIndex * 0.15 }}
             >
               <div className="flex items-center gap-3 mb-8">
-                <span 
+                <span
                   className="w-3 h-3"
-                  style={{ 
-                    backgroundColor: catIndex === 0 ? 'var(--accent)' : 
-                                    catIndex === 1 ? 'var(--highlight)' : 'var(--ink)'
+                  style={{
+                    backgroundColor:
+                      catIndex === 0
+                        ? "var(--accent)"
+                        : catIndex === 1
+                          ? "var(--highlight)"
+                          : "var(--ink)",
                   }}
                 />
                 <h3 className="font-display font-bold text-xl">{category}</h3>
               </div>
 
               <div className="space-y-6">
-                {skills.filter(s => s.category === category).map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: catIndex * 0.1 + index * 0.05 }}
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-mono text-sm">{skill.name}</span>
-                      <span className="font-mono text-xs text-muted">{skill.level}%</span>
-                    </div>
-                    <div className="h-1 bg-stone overflow-hidden">
-                      <motion.div
-                        className="h-full"
-                        style={{ 
-                          backgroundColor: catIndex === 0 ? 'var(--accent)' : 
-                                          catIndex === 1 ? 'var(--highlight)' : 'var(--ink)'
-                        }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: catIndex * 0.1 + index * 0.05, ease: [0.33, 1, 0.68, 1] }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
+                {skills
+                  .filter((s) => s.category === category)
+                  .map((skill, index) => (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: catIndex * 0.1 + index * 0.05 }}
+                    >
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-mono text-sm">{skill.name}</span>
+                        <span className="font-mono text-xs text-muted">{skill.level}%</span>
+                      </div>
+                      <div className="h-1 bg-stone overflow-hidden">
+                        <motion.div
+                          className="h-full"
+                          style={{
+                            backgroundColor:
+                              catIndex === 0
+                                ? "var(--accent)"
+                                : catIndex === 1
+                                  ? "var(--highlight)"
+                                  : "var(--ink)",
+                          }}
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 1,
+                            delay: catIndex * 0.1 + index * 0.05,
+                            ease: [0.33, 1, 0.68, 1],
+                          }}
+                        />
+                      </div>
+                    </motion.div>
+                  ))}
               </div>
             </motion.div>
           ))}
@@ -130,7 +164,7 @@ export const Skills: React.FC = () => {
         {/* Bottom statement */}
         <motion.div
           className="mt-24 pt-16 border-t text-center"
-          style={{ borderColor: 'var(--stone)' }}
+          style={{ borderColor: "var(--stone)" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -138,8 +172,9 @@ export const Skills: React.FC = () => {
         >
           <p className="text-2xl md:text-3xl font-display font-medium max-w-4xl mx-auto leading-relaxed">
             &ldquo;Transparantie en eerlijkheid staan centraal in mijn werk. <br />
-            <span style={{ color: 'var(--accent)' }}>Heldere communicatie </span> 
-            betekent dat ik altijd onderbouwde meningen geef — ook als die buiten de verwachting liggen. <br />
+            <span style={{ color: "var(--accent)" }}>Heldere communicatie </span>
+            betekent dat ik altijd onderbouwde meningen geef — ook als die buiten de verwachting
+            liggen. <br />
             Zo komen we tot de beste oplossing voor elke uitdaging.&rdquo;
           </p>
         </motion.div>

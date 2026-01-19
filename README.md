@@ -94,6 +94,7 @@ src/
 ### Update Metadata
 
 Edit `src/app/layout.tsx` to customize:
+
 - Title
 - Description
 - Favicon
@@ -102,6 +103,7 @@ Edit `src/app/layout.tsx` to customize:
 ### Customize Colors
 
 Edit `src/app/globals.css` to modify:
+
 - `--color-background`
 - `--color-foreground`
 - `--color-primary`

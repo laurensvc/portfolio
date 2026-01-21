@@ -1,8 +1,8 @@
 "use client";
 
+import { experiences } from "@/data/experience";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { experiences } from "@/data/experience";
 
 export const WorkExperience: React.FC = () => {
   const [activeExp, setActiveExp] = useState<string>("01");
@@ -71,7 +71,6 @@ export const WorkExperience: React.FC = () => {
                 >
                   <div className="flex items-start justify-between mb-2">
                     <span className="font-mono text-xs text-muted">{exp.id}</span>
-                    <span className="font-mono text-xs text-muted">{exp.period}</span>
                   </div>
                   <h3
                     className={`text-xl font-display font-bold mb-1 transition-colors ${
@@ -101,16 +100,6 @@ export const WorkExperience: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <span
-                    className="px-3 py-1 font-mono text-xs uppercase"
-                    style={{ backgroundColor: "var(--accent)", color: "var(--paper)" }}
-                  >
-                    {activeExperience.type}
-                  </span>
-                  <span className="font-mono text-sm text-muted">{activeExperience.period}</span>
-                </div>
-
                 <h3 className="text-3xl font-display font-bold mb-2">{activeExperience.role}</h3>
                 <p className="text-xl text-muted mb-6">@ {activeExperience.company}</p>
 

@@ -2,8 +2,6 @@ export interface Experience {
   id: string;
   company: string;
   role: string;
-  period: string;
-  type: string;
   description: string;
   achievements: string[];
   technologies: string[];
@@ -12,45 +10,76 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: "01",
-    company: "Company One",
-    role: "Senior Software Engineer",
-    period: "2022 — Heden",
-    type: "Volledige baan",
+    company: "Unbrace",
+    role: "Frontend Developer",
     description:
-      "Leidinggeven aan frontend architectuur en design systems voor een fintech platform dat miljoenen gebruikers bedient.",
+      "Backoffice ontwikkeld voor CM, een bedrijf dat meerdere resellers helpt om office licenties te beheren.",
     achievements: [
-      "Architectuur ontworpen voor een component bibliotheek gebruikt door 5 productteams",
-      "Bundle grootte met 40% verminderd door code splitting strategieën",
-      "4 junior ontwikkelaars begeleid naar senior posities",
+      "Serverside rendering gebouwd voordat nextjs beschikbaar was",
+      "Gebruikte Redux om de state te beheren en te synchroniseren",
+      "Realtime dashboard zorgde voor een betere gebruikerservaring",
     ],
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL", "AWS"],
+    technologies: ["React", "Typescript", "Axios", "Redux", "Storybook", "Figma"],
   },
   {
     id: "02",
-    company: "Company Two",
-    role: "Full Stack Developer",
-    period: "2020 — 2022",
-    type: "Volledige baan",
-    description: "Schaalbare web applicaties en API's gebouwd voor een enterprise SaaS product.",
+    company: "Proximus",
+    role: "Frontend Developer",
+    description: "Platform ontwikkeld voor de Proximus API (ENCO.io).",
     achievements: [
-      "Real-time samenwerkingsfuncties ontwikkeld met WebSockets",
-      "CI/CD pipelines geïmplementeerd die deployment tijd met 60% verminderden",
-      "Migratie geleid van monolith naar microservices architectuur",
+      "Gebruikte GraphQL om de data te manipuleren en te synchroniseren",
+      "Snelle development environment gebouwd met Storybook en Figma",
+      "Wordt gebruikt door 1000+ developers van de Proximus API"
     ],
-    technologies: ["Vue.js", "Node.js", "PostgreSQL", "Docker", "Redis"],
+    technologies: ["React", "Typescript", "Axios", "Storybook", "Figma", "GraphQL"],
   },
   {
     id: "03",
-    company: "Agency Name",
-    role: "Frontend Developer",
-    period: "2018 — 2020",
-    type: "Volledige baan",
-    description: "Op maat gemaakte digitale ervaringen gecreëerd voor bekende merken en startups.",
+    company: "Euronav / CMB.tech",
+    role: "Frontend Developer / Designer",
+    description: "Naval platform voor de tracking van containers / beheren van in en outbound cargo",
     achievements: [
-      "30+ klantprojecten op tijd en binnen budget afgeleverd",
-      "2 industrie awards gewonnen voor interactieve web ervaringen",
-      "Frontend best practices en documentatie opgezet",
+      "Gebruikte Three.js om de 3D modellen te renderen en te animeren",
+      "Realtime data visualisatie",
+      "Container tracking zorgde voor 35% minder fouten in de logistieke planning",
+      
     ],
-    technologies: ["JavaScript", "React", "GSAP", "Three.js", "Sass"],
+    technologies: ["Typescript", "React", "GSAP", "Three.js", "Figma", "WebGL"],
   },
+  {
+    id: "04",
+    company: "Agoria",
+    role: "Frontend Developer / AI integration",
+    description: "AI integratie voor de Agoria (ADA/NEO) chatbot",
+    achievements: [
+      "Gebruikte OpenAI API via Azure voor EU data privacy",
+      "New AI model training pipeline gebouwd voor de chatbot",
+      "Nieuw design implementatie voor gebruikerservaring"
+    ],
+    technologies: ["Typescript", "React", "OpenAI", "Azure", "Figma", "TailwindCSS", "Framer Motion"],
+  },
+  {
+    id: "05",
+    company: "Codit",
+    role: "Frontend Developer / Designer",
+    description: " Ontwikkeling en design van Customer support platform voor Codit",
+    achievements: [
+      "Customer tickets opvolgen en beheren gemakkelijker gemaakt",
+      "Design system implementatie voor consistentie en eenvoudige onderhoud",
+      "Automatisering van processen zorgde voor +-20% minder werklast voor de support team"
+    ],
+    technologies: ["Typescript", "React", "TailwindCSS", "Figma", "Zustand", "Shadcn/UI"],
+  },
+  {
+    id: "06",
+    company: "Productora",
+    role: "Frontend Developer / Designer",
+    description: " Ontwikkeling en design JIT metal fabrication platform voor Productora",
+      achievements: [
+        "Tanstack Query om de data te manipuleren en te synchroniseren",
+        "Next.js om de pagina's te renderen en te optimizeren / SEO optimalisatie",
+        "Multi tenant support gebouwd voor verschillende klanten",
+    ],
+    technologies: ["Typescript", "React", "TailwindCSS", "Figma", "Tanstack Query", "Shadcn/UI", "Next.js"],
+  }
 ];

@@ -124,8 +124,7 @@ export const Hero: React.FC = () => {
               Ik bouw interfaces die
               <span className="text-ink font-medium"> gebruikers blij maken</span> en
               <span className="text-ink font-medium"> code die blijft werken</span>. Frontend
-              development en UI/UX design zijn mijn passie, maar ik pak graag verschillende taken
-              op. Gevestigd in Schilde.
+              development en UI/UX design zijn mijn specialiteit.
             </motion.p>
 
             {/* CTA Buttons */}

@@ -6,27 +6,11 @@ import { useEffect, useState } from "react";
 
 export const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
-  const [time, setTime] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const updateTime = () => {
-      setTime(
-        new Date().toLocaleTimeString("nl-NL", {
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: false,
-        })
-      );
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { stats } from "@/data/about";
 
 export const About: React.FC = () => {
@@ -54,13 +55,15 @@ export const About: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="relative aspect-4/5 bg-stone overflow-hidden group">
-              {/* Placeholder for your photo */}
-              <div
-                className="absolute inset-0 flex items-center justify-center text-muted font-mono text-sm"
-                style={{ backgroundColor: "var(--stone)" }}
-              >
-                [ JOUW FOTO ]
-              </div>
+              {/* Photo */}
+              <Image
+                src="/photo.jpg"
+                alt="Laurens van VCWORKS"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+              />
 
               {/* Decorative elements */}
               <div
@@ -93,8 +96,8 @@ export const About: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Ik creëer digitale producten die
-              <span style={{ color: "var(--accent)" }}> impact maken</span>
+              Frontend development en UI/UX design,
+              <span style={{ color: "var(--accent)" }}> maar veel meer dan dat</span>
             </motion.h2>
 
             <motion.div
@@ -105,16 +108,15 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p>
-                Ik ben een full-stack ontwikkelaar en ontwerper met een passie voor het creëren van
-                uitzonderlijke digitale ervaringen. Mijn aanpak combineert
-                <span className="text-ink font-medium"> technische expertise</span> met
-                <span className="text-ink font-medium"> creatieve visie</span> om producten te
-                bouwen die echt resoneren met gebruikers.
+                Mijn hart ligt bij <span className="text-ink font-medium">frontend development</span> en 
+                <span className="text-ink font-medium"> UI/UX design</span>, maar ik ben niet iemand die 
+                zich laat beperken tot één vakgebied. Van het bouwen van interactieve interfaces tot het 
+                ontwerpen van gebruikerservaringen—ik pak graag verschillende taken op en leer snel bij.
               </p>
               <p>
-                Met een achtergrond die reikt van startups tot enterprise, breng ik een uniek
-                perspectief naar elk project. Ik geloof dat geweldige software zowel mooi als
-                functioneel moet zijn—nooit het een ten koste van het ander.
+                Ik geloof dat de beste digitale producten ontstaan wanneer techniek en design hand in hand 
+                gaan. Mijn aanpak is pragmatisch maar met oog voor detail: code die werkt én er goed uitziet, 
+                interfaces die intuïtief zijn én een beetje verrassen.
               </p>
             </motion.div>
 

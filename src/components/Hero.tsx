@@ -147,11 +147,10 @@ export const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              Ik creëer digitale ervaringen die
-              <span className="text-ink font-medium"> gedurfde esthetiek </span>
-              combineren met
-              <span className="text-ink font-medium"> vlekkeloze functionaliteit</span>. Gevestigd
-              in Schilde.
+              Ik bouw interfaces die
+              <span className="text-ink font-medium"> gebruikers blij maken</span> en
+              <span className="text-ink font-medium"> code die blijft werken</span>. 
+              Frontend development en UI/UX design zijn mijn passie, maar ik pak graag verschillende taken op. Gevestigd in Schilde.
             </motion.p>
 
             {/* CTA Buttons */}

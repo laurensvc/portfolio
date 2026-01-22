@@ -1,8 +1,8 @@
 "use client";
 
+import { roles } from "@/data/hero";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { roles } from "@/data/hero";
 
 export const Hero: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -67,15 +67,6 @@ export const Hero: React.FC = () => {
       {/* Main content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-24 py-8">
         {/* Top bar */}
-        <motion.div
-          className="flex justify-between items-center font-mono text-sm text-muted"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <span>PORTFOLIO © {new Date().getFullYear()}</span>
-          <span>{time}</span>
-        </motion.div>
 
         {/* Center content */}
         <div className="flex-1 flex flex-col justify-center py-20">
@@ -92,7 +83,6 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <span className="inline-block w-12 h-px bg-muted mr-4 align-middle" />
-              Hallo, ik ben
             </motion.p>
 
             {/* Name - Large display */}
@@ -106,7 +96,7 @@ export const Hero: React.FC = () => {
                 Laurens
               </motion.h1>
             </div>
-            <div className="overflow-hidden mb-8">
+            {/* <div className="overflow-hidden mb-8">
               <motion.h1
                 className="text-[12vw] md:text-[10vw] lg:text-[8vw] font-display font-extrabold leading-[0.85] tracking-tight flex items-baseline gap-4"
                 initial={{ y: "100%" }}
@@ -115,7 +105,7 @@ export const Hero: React.FC = () => {
               >
                 <span className="text-accent">VCWORKS</span>
               </motion.h1>
-            </div>
+            </div> */}
 
             {/* Role switcher */}
             <motion.div
@@ -149,8 +139,9 @@ export const Hero: React.FC = () => {
             >
               Ik bouw interfaces die
               <span className="text-ink font-medium"> gebruikers blij maken</span> en
-              <span className="text-ink font-medium"> code die blijft werken</span>. 
-              Frontend development en UI/UX design zijn mijn passie, maar ik pak graag verschillende taken op. Gevestigd in Schilde.
+              <span className="text-ink font-medium"> code die blijft werken</span>. Frontend
+              development en UI/UX design zijn mijn passie, maar ik pak graag verschillende taken
+              op. Gevestigd in Schilde.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -171,7 +162,7 @@ export const Hero: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span className="relative z-10">Bekijk Werk</span>
+                <span className="relative z-10">Bekijk projecten</span>
                 <motion.div
                   className="absolute inset-0"
                   style={{ backgroundColor: "var(--accent)" }}
@@ -194,7 +185,7 @@ export const Hero: React.FC = () => {
                 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Laten we praten
+                Contacteer mij
               </motion.a>
             </motion.div>
           </motion.div>
@@ -208,14 +199,11 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 1 }}
         >
           <div className="flex gap-6 font-mono text-muted">
-            <a href="#" className="hover:text-accent transition-colors">
+            <a href="https://github.com/laurensvc" className="hover:text-accent transition-colors">
               GH
             </a>
-            <a href="#" className="hover:text-accent transition-colors">
+            <a href="https://www.linkedin.com/in/laurensvancauwelaert/" className="hover:text-accent transition-colors">
               LI
-            </a>
-            <a href="#" className="hover:text-accent transition-colors">
-              TW
             </a>
           </div>
           <motion.div

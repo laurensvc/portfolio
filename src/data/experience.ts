@@ -29,7 +29,7 @@ export const experiences: Experience[] = [
     achievements: [
       "Gebruikte GraphQL om de data te manipuleren en te synchroniseren",
       "Snelle development environment gebouwd met Storybook en Figma",
-      "Wordt gebruikt door 1000+ developers van de Proximus API"
+      "Wordt gebruikt door 1000+ developers van de Proximus API",
     ],
     technologies: ["React", "Typescript", "Axios", "Storybook", "Figma", "GraphQL"],
   },
@@ -37,12 +37,12 @@ export const experiences: Experience[] = [
     id: "03",
     company: "Euronav / CMB.tech",
     role: "Frontend Developer / Designer",
-    description: "Naval platform voor de tracking van containers / beheren van in en outbound cargo",
+    description:
+      "Naval platform voor de tracking van containers / beheren van in en outbound cargo",
     achievements: [
       "Gebruikte Three.js om de 3D modellen te renderen en te animeren",
       "Realtime data visualisatie",
       "Container tracking zorgde voor 35% minder fouten in de logistieke planning",
-      
     ],
     technologies: ["Typescript", "React", "GSAP", "Three.js", "Figma", "WebGL"],
   },
@@ -54,9 +54,17 @@ export const experiences: Experience[] = [
     achievements: [
       "Gebruikte OpenAI API via Azure voor EU data privacy",
       "New AI model training pipeline gebouwd voor de chatbot",
-      "Nieuw design implementatie voor gebruikerservaring"
+      "Nieuw design implementatie voor gebruikerservaring",
     ],
-    technologies: ["Typescript", "React", "OpenAI", "Azure", "Figma", "TailwindCSS", "Framer Motion"],
+    technologies: [
+      "Typescript",
+      "React",
+      "OpenAI",
+      "Azure",
+      "Figma",
+      "TailwindCSS",
+      "Framer Motion",
+    ],
   },
   {
     id: "05",
@@ -66,7 +74,7 @@ export const experiences: Experience[] = [
     achievements: [
       "Customer tickets opvolgen en beheren gemakkelijker gemaakt",
       "Design system implementatie voor consistentie en eenvoudige onderhoud",
-      "Automatisering van processen zorgde voor +-20% minder werklast voor de support team"
+      "Automatisering van processen zorgde voor +-20% minder werklast voor de support team",
     ],
     technologies: ["Typescript", "React", "TailwindCSS", "Figma", "Zustand", "Shadcn/UI"],
   },
@@ -75,11 +83,19 @@ export const experiences: Experience[] = [
     company: "Productora",
     role: "Frontend Developer / Designer",
     description: " Ontwikkeling en design JIT metal fabrication platform voor Productora",
-      achievements: [
-        "Tanstack Query om de data te manipuleren en te synchroniseren",
-        "Next.js om de pagina's te renderen en te optimizeren / SEO optimalisatie",
-        "Multi tenant support gebouwd voor verschillende klanten",
+    achievements: [
+      "Tanstack Query om de data te manipuleren en te synchroniseren",
+      "Next.js om de pagina's te renderen en te optimizeren / SEO optimalisatie",
+      "Multi tenant support gebouwd voor verschillende klanten",
     ],
-    technologies: ["Typescript", "React", "TailwindCSS", "Figma", "Tanstack Query", "Shadcn/UI", "Next.js"],
-  }
+    technologies: [
+      "Typescript",
+      "React",
+      "TailwindCSS",
+      "Figma",
+      "Tanstack Query",
+      "Shadcn/UI",
+      "Next.js",
+    ],
+  },
 ];

@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import Image from "next/image";
 import { stats } from "@/data/about";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
+import { useRef } from "react";
 
 export const About: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -57,7 +57,7 @@ export const About: React.FC = () => {
             <div className="relative aspect-4/5 bg-stone overflow-hidden group">
               {/* Photo */}
               <Image
-                src="/photo.jpg"
+                src="/portret.png"
                 alt="Laurens van VCWORKS"
                 fill
                 className="object-cover object-center"
@@ -108,15 +108,17 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <p>
-                Mijn hart ligt bij <span className="text-ink font-medium">frontend development</span> en 
-                <span className="text-ink font-medium"> UI/UX design</span>, maar ik ben niet iemand die 
-                zich laat beperken tot één vakgebied. Van het bouwen van interactieve interfaces tot het 
-                ontwerpen van gebruikerservaringen—ik pak graag verschillende taken op en leer snel bij.
+                Mijn hart ligt bij{" "}
+                <span className="text-ink font-medium">frontend development</span> en
+                <span className="text-ink font-medium"> UI/UX design</span>, maar ik ben niet iemand
+                die zich laat beperken tot één vakgebied. Van het bouwen van interactieve interfaces
+                tot het ontwerpen van gebruikerservaringen—ik pak graag verschillende taken op en
+                leer snel bij.
               </p>
               <p>
-                Ik geloof dat de beste digitale producten ontstaan wanneer techniek en design hand in hand 
-                gaan. Mijn aanpak is pragmatisch maar met oog voor detail: code die werkt én er goed uitziet, 
-                interfaces die intuïtief zijn én een beetje verrassen.
+                Ik geloof dat de beste digitale producten ontstaan wanneer techniek en design hand
+                in hand gaan. Mijn aanpak is pragmatisch maar met oog voor detail: code die werkt én
+                er goed uitziet, interfaces die intuïtief zijn én een beetje verrassen.
               </p>
             </motion.div>
 

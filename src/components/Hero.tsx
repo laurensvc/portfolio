@@ -182,10 +182,10 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 1 }}
         >
           <div className="flex gap-6 font-mono text-muted">
-            <a href="https://github.com/laurensvc" className="hover:text-accent transition-colors">
+            <a href="https://github.com/laurensvc" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
               GH
             </a>
-            <a href="https://www.linkedin.com/in/laurensvancauwelaert/" className="hover:text-accent transition-colors">
+            <a href="https://www.linkedin.com/in/laurensvancauwelaert/" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
               LI
             </a>
           </div>

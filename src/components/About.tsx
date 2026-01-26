@@ -130,27 +130,8 @@ export const About: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                >
-                  <div
-                    className="text-3xl md:text-4xl font-display font-bold mb-1"
-                    style={{ color: "var(--accent)" }}
-                  >
-                    {stat.value}
-                  </div>
-                  <div className="font-mono text-xs text-muted uppercase tracking-wider">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+            />
+            
           </div>
         </div>
       </div>

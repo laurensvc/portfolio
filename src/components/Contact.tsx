@@ -52,14 +52,9 @@ export const Contact: React.FC = () => {
               </span>
             </h2>
 
-            <p className="text-lg text-muted leading-relaxed mb-12">
-              Ik ben momenteel beschikbaar voor freelance werk en full-time mogelijkheden. Als je
-              een project hebt dat een combinatie van design thinking en technische expertise nodig
-              heeft, hoor ik graag van je.
-            </p>
 
             <motion.a
-              href="mailto:your.email@example.com"
+              href="mailto:work@laurens.vc"
               className="group inline-flex items-center gap-4"
               whileHover={{ x: 10 }}
             >
@@ -67,7 +62,7 @@ export const Contact: React.FC = () => {
                 className="text-2xl md:text-3xl font-display font-bold transition-colors group-hover:text-accent"
                 style={{ color: "var(--ink)" }}
               >
-                your.email@example.com
+                work@laurens.vc
               </span>
               <svg
                 width="32"
@@ -174,7 +169,7 @@ export const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="font-mono text-sm text-muted">
-            © 2026 VCworks. Alle rechten voorbehouden.
+            © {new Date().getFullYear()} Laurens VC. Alle rechten voorbehouden.
           </div>
           <div className="font-mono text-sm text-muted">Ontworpen & Gebouwd met precisie</div>
         </motion.div>

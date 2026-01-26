@@ -13,8 +13,6 @@ export const skills: Skill[] = [
   { name: "Three.js / WebGL", level: 70, category: "Frontend" },
   // Backend
   { name: "Node.js", level: 88, category: "Backend" },
-  { name: "Python", level: 80, category: "Backend" },
-  { name: "PostgreSQL", level: 85, category: "Backend" },
   { name: "GraphQL", level: 78, category: "Backend" },
   { name: "AWS / Cloud", level: 75, category: "Backend" },
   // Design
@@ -28,14 +26,18 @@ export const toolMarquee = [
   "Next.js",
   "TypeScript",
   "Node.js",
-  "PostgreSQL",
-  "AWS",
   "Docker",
   "Figma",
   "Git",
   "GraphQL",
-  "Redis",
   "Tailwind",
-  "Prisma",
   "Vercel",
+  "Shadcn/UI",
+  "Tanstack Query",
+  "Zustand",
+  "React Router",
+  "React Hook Form",
+  "React Query",
+  "React Hook Form",
+
 ];

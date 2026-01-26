@@ -1,6 +1,5 @@
 "use client";
 
-import { stats } from "@/data/about";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
@@ -131,7 +130,6 @@ export const About: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             />
-            
           </div>
         </div>
       </div>

@@ -24,7 +24,7 @@ export const ConsoleMessage: React.FC = () => {
 %c  Full-stack Developer & Designer
 %c  
 %c  Beschikbaar voor nieuwe projecten
-%c  Neem contact op: project@laurens.vc
+%c  Neem contact op: work@laurens.vc
 %c
 %c  Gebouwd met Next.js, TypeScript & Tailwind CSS
     `;

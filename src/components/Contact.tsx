@@ -52,7 +52,6 @@ export const Contact: React.FC = () => {
               </span>
             </h2>
 
-
             <motion.a
               href="mailto:work@laurens.vc"
               className="group inline-flex items-center gap-4"

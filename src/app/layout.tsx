@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     "UI/UX",
   ],
   authors: [{ name: "Laurens" }],
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Laurens VC — Ontwikkelaar & Ontwerper",
     description:

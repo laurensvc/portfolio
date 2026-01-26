@@ -39,5 +39,4 @@ export const toolMarquee = [
   "React Hook Form",
   "React Query",
   "React Hook Form",
-
 ];

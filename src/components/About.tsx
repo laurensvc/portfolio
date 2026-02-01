@@ -56,7 +56,7 @@ export const About: React.FC = () => {
             <div className="relative aspect-4/5 bg-stone overflow-hidden group">
               {/* Photo */}
               <Image
-                src="/portret.png"
+                src="/portret.jpg"
                 alt="Laurens van VCWORKS"
                 fill
                 className="object-cover object-center"
